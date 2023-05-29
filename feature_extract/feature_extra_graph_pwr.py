@@ -5,10 +5,10 @@ import networkx as nx
 from multiprocessing import Pool
 
 bench_type = 'area_pwr'
-design_json = f"/data/wenjifang/masterRTL/graph_data/design_{bench_type}.json"
+design_json = f"/data/user/masterRTL/graph_data/design_{bench_type}.json"
 
 def run_one_design(design_name):
-        with open(f"/data/wenjifang/qor_predictor/dyn_pwr_ML/design_level/feat_all/{design_name}.json", 'r') as f:
+        with open(f"/data/user/qor_predictor/dyn_pwr_ML/design_level/feat_all/{design_name}.json", 'r') as f:
             feat_vec = json.load(f)
         #feat_vec = [0: seq_num, 1: io_num, 2: comb_num, 3: total_num, 4: io_num/total_num, 
         #           5: and_num, 6: or_num, 7: not_num, 8: xor_num, 9: mux_num, 
@@ -17,16 +17,16 @@ def run_one_design(design_name):
         #           15: pred_dyn_pwr 16:pred_stat_pwr
         # ]
 
-        with open(f"/data/wenjifang/qor_predictor/feature_extraction/power_feature/data/toggle_rate/{design_name}_tc_sum_all.json", 'r') as f:
+        with open(f"/data/user/qor_predictor/feature_extraction/power_feature/data/toggle_rate/{design_name}_tc_sum_all.json", 'r') as f:
             tr_sum = json.load(f)
             feat_vec.append(tr_sum)
         
-        with open(f"/data/wenjifang/qor_predictor/feature_extraction/power_feature/data/toggle_rate/{design_name}_tc_avr_all.json", 'r') as f:
+        with open(f"/data/user/qor_predictor/feature_extraction/power_feature/data/toggle_rate/{design_name}_tc_avr_all.json", 'r') as f:
             tr_avr = json.load(f)
             feat_vec.append(tr_avr) 
 
         
-        ret_all_dict_path = '/data/wenjifang/qor_predictor/module_level/ML_model/output/all_dict_w_pred.pkl'
+        ret_all_dict_path = '/data/user/qor_predictor/module_level/ML_model/output/all_dict_w_pred.pkl'
         with open(ret_all_dict_path, 'rb') as f:
             all_dict = pickle.load(f)
         
@@ -38,7 +38,7 @@ def run_one_design(design_name):
                 pred_pwr += module_dict['pred']
         feat_vec.append(pred_pwr)
 
-        feat_dir = "/data/wenjifang/masterRTL/feature_extract/feat_data/graph_stat"
+        feat_dir = "/data/user/masterRTL/feature_extract/feat_data/graph_stat"
         vec_name = feat_dir + f'/{design_name}_{cmd}_vec_graph_stat.json'
         with open(vec_name, 'r') as f:
                 graph_stat = json.load(f)
@@ -46,7 +46,7 @@ def run_one_design(design_name):
         
  
 
-        feat_dir = "/data/wenjifang/masterRTL/feature_extract/feat_data/pwr_feature"
+        feat_dir = "/data/user/masterRTL/feature_extract/feat_data/pwr_feature"
         vec_name = feat_dir + f'/{design_name}_{cmd}_vec_pwr.json'
         with open(vec_name, 'w') as f:
                 json.dump(feat_vec, f)
