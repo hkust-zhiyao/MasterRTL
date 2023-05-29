@@ -5,7 +5,7 @@ from graph_stat import cal_oper
 import numpy as np
 import time
 
-bench_type = 'area_pwr'
+
 design_json = f"/data/user/masterRTL/graph_data/design_{bench_type}.json"
 
  

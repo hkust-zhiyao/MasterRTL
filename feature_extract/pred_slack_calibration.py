@@ -3,7 +3,7 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
-bench_type = 'timing'
+
 design_json = f"/data/user/masterRTL/graph_data/design_{bench_type}.json"
 
 

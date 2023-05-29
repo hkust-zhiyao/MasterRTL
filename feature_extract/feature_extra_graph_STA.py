@@ -9,7 +9,7 @@ import numpy as np
 import torch
 from graph_stat import cal_timing
 
-bench_type = 'timing'
+
 design_json = f"/data/user/masterRTL/graph_data/design_{bench_type}.json"
 
 

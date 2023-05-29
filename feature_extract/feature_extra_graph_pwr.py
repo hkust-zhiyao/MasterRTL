@@ -4,7 +4,7 @@ from DG import Graph
 import networkx as nx
 from multiprocessing import Pool
 
-bench_type = 'area_pwr'
+
 design_json = f"/data/user/masterRTL/graph_data/design_{bench_type}.json"
 
 def run_one_design(design_name):
