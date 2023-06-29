@@ -7,7 +7,7 @@ sys.path.append('/data/user/AST_analyzer/ML_model')
 sys.path.append('/data/user/AST_analyzer/ML_model/MLP_model.py')
 import numpy as np
 import torch
-from graph_stat import cal_timing
+from circuit_processing.area.graph_stat import cal_timing
 
 
 design_json = f"/data/user/masterRTL/graph_data/design_{bench_type}.json"

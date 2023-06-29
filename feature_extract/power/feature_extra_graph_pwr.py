@@ -10,12 +10,6 @@ design_json = f"/data/user/masterRTL/graph_data/design_{bench_type}.json"
 def run_one_design(design_name):
         with open(f"/data/user/qor_predictor/dyn_pwr_ML/design_level/feat_all/{design_name}.json", 'r') as f:
             feat_vec = json.load(f)
-        #feat_vec = [0: seq_num, 1: io_num, 2: comb_num, 3: total_num, 4: io_num/total_num, 
-        #           5: and_num, 6: or_num, 7: not_num, 8: xor_num, 9: mux_num, 
-        #           10: tr_sum_prop, 11: tr_sum/tr_num_prop, 12:stat pwr
-        #           13: tr_sum_DC, 14: tr_sum/tr_num_DC
-        #           15: pred_dyn_pwr 16:pred_stat_pwr
-        # ]
 
         with open(f"/data/user/qor_predictor/feature_extraction/power_feature/data/toggle_rate/{design_name}_tc_sum_all.json", 'r') as f:
             tr_sum = json.load(f)

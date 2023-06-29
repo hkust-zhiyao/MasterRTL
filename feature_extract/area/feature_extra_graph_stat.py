@@ -1,7 +1,7 @@
 from logicGraph import *
 import pickle, json, time, os, sys
 from DG import Node
-from graph_stat import cal_oper
+from circuit_processing.area.graph_stat import cal_oper
 import numpy as np
 import time
 
