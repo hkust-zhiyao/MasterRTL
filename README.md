@@ -1,6 +1,6 @@
 # MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design
 
-Code repository for the sumbitted paper in ICCAD'23: MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design
+Code repository for the paper sumbitted to ICCAD'23: MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design
 
 ## Abstract
 
