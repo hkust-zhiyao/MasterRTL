@@ -1,6 +1,6 @@
 # MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design
 
-Code repository for the paper sumbitted to ICCAD'23: MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design
+Code repository for the paper presented in ICCAD'23: MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design
 
 ## Abstract
 
@@ -11,8 +11,8 @@ In modern VLSI design flow, the register-transfer level (RTL) stage is a critica
 1. Circuit processing
 
    * Preprocess the circuit data, including
-     * Converte the RTL code into graph representation
-     * Process the graph into directed acyclic graph (DAG)
+     * Converte the RTL code into a graph representation
+     * Process the graph into a directed acyclic graph (DAG)
      * Prepare for the toggle rate propagation for power prediction and delay propagation for timing estimation
 2. Feature extraction
 
