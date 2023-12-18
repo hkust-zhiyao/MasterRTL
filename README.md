@@ -1,6 +1,6 @@
 # MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design
 
-Code repository for the paper presented in ICCAD'23: MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design
+Wenji Fang, Yao Lu, Shang Liu, Qijun Zhang, Ceyu Xu, Lisa Wu Wills, Hongce Zhang, Zhiyao Xie. In Proceedings of IEEE/ACM International Conference on Computer Aided Design (ICCAD), 2023. [[paper]](https://ieeexplore.ieee.org/abstract/document/10323951)
 
 ## Abstract
 
