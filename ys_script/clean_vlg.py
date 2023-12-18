@@ -1,0 +1,1 @@
+/data/wenjifang/LS-benchmark/VexRiscv/ys/autoRun.py

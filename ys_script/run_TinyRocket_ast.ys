@@ -1,0 +1,10 @@
+read  -verific
+read_verilog ../example/verilog/TinyRocket/plusarg_reader.v
+read_verilog ../example/verilog/TinyRocket/chipyard.TestHarness.TinyRocketConfig.top.v
+
+# elaborate design hierarchy
+hierarchy -check -top Rocket
+proc
+flatten
+memory
+write_verilog ../example/verilog/TinyRocket_ast.v
