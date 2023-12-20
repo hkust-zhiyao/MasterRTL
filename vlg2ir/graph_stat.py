@@ -1,11 +1,14 @@
 from DG import Graph
-import json, re
+import json, re, os
 import numpy as np
 import networkx as nx
 
+cwd = os.getcwd()
+
+
 def cal_oper(g:Graph):
         g_nx = nx.DiGraph(g.graph)
-        area_dict = "/data/wenjifang/AST_analyzer/std_PPA.json"
+        area_dict = "../../std_PPA.json"
         with open(area_dict, 'r') as f:
             std_data = json.load(f)
 
@@ -84,7 +87,7 @@ def cal_oper(g:Graph):
         return feat_vec
 
 
-ppa_dict = "/data/wenjifang/AST_analyzer/std_PPA.json"
+ppa_dict = "../../std_PPA.json"
 with open(ppa_dict, 'r') as f:
     std_data = json.load(f)
 t_data = std_data['timing']

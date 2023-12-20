@@ -99,16 +99,6 @@ class Graph:
         with open(node_dict_name, 'wb') as f:
             pickle.dump(self.node_dict, f)
     
-    def graph2pkl_modules(self, design_name, module_name, cmd):
-        folder_dir = f'/data/wenjifang/AST_analyzer/graph_data_module/{design_name}/'
-        if not os.path.exists(folder_dir):
-            os.system(f'mkdir {folder_dir}')
-        graph_name = folder_dir + f'{module_name}_{cmd}.pkl'
-        node_dict_name = folder_dir + f'{module_name}_{cmd}_node_dict.pkl'
-        with open(graph_name, 'wb') as f:
-            pickle.dump(self.graph, f)
-        with open(node_dict_name, 'wb') as f:
-            pickle.dump(self.node_dict, f)
 
         
 
