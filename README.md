@@ -8,7 +8,7 @@ Wenji Fang, Yao Lu, Shang Liu, Qijun Zhang, Ceyu Xu, Lisa Wu Wills, Hongce Zhang
 @inproceedings{fang2023masterrtl,
   title={MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design},
   author={Fang, Wenji and Lu, Yao and Liu, Shang and Zhang, Qijun and Xu, Ceyu and Wills, Lisa Wu and Zhang, Hongce and Xie, Zhiyao},
-  booktitle={Proceedings of 2023 IEEE/ACM International Conference on Computer Aided Design (ICCAD)},
+  booktitle={Proceedings of 2023 IEEE/ACM International Conference on Computer-Aided Design (ICCAD)},
   pages={1--9},
   year={2023},
   organization={IEEE}
@@ -74,13 +74,13 @@ In modern VLSI design flow, the register-transfer level (RTL) stage is a critica
    ## Timing
    $ cd feature_extract/timing
    $ python3 feature_extra_graph_STA.py
-	  ## Please note that this feature extraction step need the trained path-level model ('rfr' in the code) to inference the path delay. You may train the path model first refer to the method in the paper. 
+	  ## Please note that this feature extraction step needs the trained path-level model ('rfr' in the code) to infer the path delay. You may train the path model first referring to the method in the paper. 
    $ python3 pred_slack_calibration.py
    
    ## Power
    $ cd feature_extract/power
    $ python3 feature_extra_module_pwr.py
-    ## Please note that this feature extraction step need the toggle rate information obtained from the EDA tool (e.g., Design Compiler) at the beginning of the logic synthesis process. 
+    ## Please note that this feature extraction step needs the toggle rate information obtained from the EDA tool (e.g., Design Compiler) at the beginning of the logic synthesis process. 
    $ python3 feature_extra_graph_pwr.py
    
    ## Area:
