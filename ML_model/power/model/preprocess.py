@@ -60,17 +60,6 @@ def draw_fig_kf(title, y_pred, y_test, method, train_test):
     print(title)
     r = get_metrics(y_pred, y_test)
 
-    if title != 'Total Power':
-        return
-    if r > 0.5:
-        exit()
-        with open (f'../data/pred.pkl', 'wb') as f:
-            pickle.dump(y_pred, f)
-        with open (f'../data/real.pkl', 'wb') as f:
-            pickle.dump(y_test, f)
-        exit()
-    else:
-        return
     mse = metrics.mean_squared_error(normalization(y_test), normalization(y_pred), squared=True)
     mse = round(mse, 3)
     mspe = mspe_cal(y_test, y_pred)

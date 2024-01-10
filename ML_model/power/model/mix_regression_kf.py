@@ -126,18 +126,6 @@ if __name__ == '__main__':
     
     label_data, feat_data = load_data_sep()
     x = feat_data
-    while True:
-        kFold_train(x, label_data, 'Pwr')
 
-        design_lst = ['SmallBoom', 'MediumBoom', 'LargeBoom', 'MegaBoom']
-        for design in design_lst:
-            print(design)
-            d = dict_all[design]
-            mape_val = MAPE_one_val(d['pred_total_pwr'], d['real_total_pwr'])
-            print(mape_val)
-        input()
+    kFold_train(x, label_data, 'Pwr')
 
-    # with open ('./data/pred_pwr_dict.pkl', 'wb') as f:
-    #     pickle.dump(dict_all, f)
-    # if r > 0.85:
-    #     exit()

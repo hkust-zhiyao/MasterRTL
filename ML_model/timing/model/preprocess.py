@@ -69,15 +69,6 @@ def draw_fig_kf(title, y_pred, y_test, method, train_test):
     print(title)
     r = get_metrics(y_pred, y_test)
 
-    if r < 0.95:
-        exit()
-        with open (f'../data/pred_{title}.pkl', 'wb') as f:
-            pickle.dump(y_pred, f)
-        with open (f'../data/real_{title}.pkl', 'wb') as f:
-            pickle.dump(y_test, f)
-        exit()
-    else:
-        return
     y_test = y_test*-1
     y_pred = y_pred*-1
     mse = metrics.mean_squared_error(normalization(y_test), normalization(y_pred), squared=True)

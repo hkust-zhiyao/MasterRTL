@@ -12,7 +12,7 @@ def run_one_design(design_name, cmd, out_path):
         folder_dir = '../../example/timing_dag'
         with open(f'{folder_dir}/{design_name}_{cmd}.pkl', 'rb') as f:
                 graph = pickle.load(f)
-        with open(f'{folder_dir}/node_dict_update/{design_name}_{cmd}_node_dict_init.pkl', 'rb') as f:
+        with open(f'{folder_dir}/{design_name}_{cmd}_node_dict_init.pkl', 'rb') as f:
                 node_dict = pickle.load(f)
         graph = nx.to_dict_of_lists(graph)
 

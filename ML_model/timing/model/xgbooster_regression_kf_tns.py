@@ -66,8 +66,5 @@ if __name__ == '__main__':
     dict_all = {}
     label_data, feat_data = load_data()
     x = feat_data
-    while True:
-        kFold_train(x, label_data[7], 'TNS')
+    kFold_train(x, label_data[7], 'TNS')
 
-    # with open ('./data/pred_tns_dict.pkl', 'wb') as f:
-    #     pickle.dump(dict_all, f)
