@@ -15,6 +15,31 @@ Wenji Fang, Yao Lu, Shang Liu, Qijun Zhang, Ceyu Xu, Lisa Wu Wills, Hongce Zhang
 }
 ```
 
+## Collected Benchmarks
+All the RTL designs used in our work are collected from open-source projects, their links are attached below:
+
+1. IWLS05 (ISCAS89+ITC99+OpenCores)
+   ```
+   https://iwls.org/iwls2005/benchmarks.html
+   ```
+2. VexRiscv (generated with different configs)
+   ```
+   https://github.com/SpinalHDL/VexRiscv
+   ```
+3. NVDLA
+   ```
+   https://github.com/nvdla/hw
+   ```
+4. Chipyard (generated with different configs)
+   ```
+   https://github.com/ucb-bar/chipyard
+   ```
+5. RISC-V cores
+   ```
+   https://github.com/YosysHQ/picorv32
+   https://github.com/onchipuis/mriscvcore
+   ```
+
 ## Abstract
 
 In modern VLSI design flow, the register-transfer level (RTL) stage is a critical point, where designers define precise design behavior with hardware description languages (HDLs) like Verilog. Since the RTL design is in the format of HDL code, the standard way to evaluate its quality requires time-consuming subsequent synthesis steps with EDA tools. This time-consuming process significantly impedes design optimization at the early RTL stage. Despite the emergence of some recent ML-based solutions, they fail to maintain high accuracy for any given RTL design. In this work, we propose an innovative pre-synthesis PPA estimation framework named MasterRTL. It first converts the HDL code to a new bit-level design representation named the simple operator graph (SOG). By only adopting single-bit simple operators, this SOG proves to be a general representation that unifies different design types and styles. The SOG is also more similar to the target gate-level netlist, reducing the gap between RTL representation and netlist. In addition to the new SOG representation, MasterRTL proposes new ML methods for the RTL-stage modeling of timing, power, and area separately. Compared with state-of-the-art solutions, the experiment on a comprehensive dataset with 90 different designs shows accuracy improvement by 0.33, 0.22, and 0.15 in correlation for total negative slack (TNS), worst negative slack (WNS), and power, respectively.
