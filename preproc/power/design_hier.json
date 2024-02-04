@@ -1,1 +1,16 @@
-/data/wenjifang/LS-benchmark/design_hier.json
+{
+
+    "chipyard": [
+        {
+            "TinyRocket": {
+                "TinyRocket_rest": 1,
+                "CSRFile": 1,
+                "BreakpointUnit": 1,
+                "ALU": 1,
+                "PlusArgTimeout": 1,
+                "IBuf": 1,
+                "MulDiv": 1
+            }
+        }
+    ]
+}
