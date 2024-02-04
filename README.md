@@ -3,6 +3,7 @@
 Wenji Fang, Yao Lu, Shang Liu, Qijun Zhang, Ceyu Xu, Lisa Wu Wills, Hongce Zhang, Zhiyao Xie. In Proceedings of IEEE/ACM International Conference on Computer Aided Design (ICCAD), 2023. [[paper]](https://ieeexplore.ieee.org/abstract/document/10323951)
 
 ## Citation
+If MasterRTL could help your project, please cite our work:
 
 ```
 @inproceedings{fang2023masterrtl,
