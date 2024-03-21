@@ -23,9 +23,13 @@ In modern VLSI design flow, the register-transfer level (RTL) stage is a critica
 ## Collected Benchmarks
 All the RTL designs used in our work are collected from open-source projects, their links are attached below:
 
-1. IWLS05 (ISCAS89+ITC99+OpenCores)
+1. IWLS05 (ISCAS89+ITC99)
    ```
    https://iwls.org/iwls2005/benchmarks.html
+   ```
+2. OpenCores
+   ```
+   https://opencores.org/
    ```
 2. VexRiscv (generated with different configs)
    ```
