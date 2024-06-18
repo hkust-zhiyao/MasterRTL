@@ -2,19 +2,8 @@
 
 Wenji Fang, Yao Lu, Shang Liu, Qijun Zhang, Ceyu Xu, Lisa Wu Wills, Hongce Zhang, Zhiyao Xie. In Proceedings of IEEE/ACM International Conference on Computer Aided Design (ICCAD), 2023. [[paper]](https://ieeexplore.ieee.org/abstract/document/10323951)
 
-## Citation
-If MasterRTL could help your project, please cite our work:
-
-```
-@inproceedings{fang2023masterrtl,
-  title={MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design},
-  author={Fang, Wenji and Lu, Yao and Liu, Shang and Zhang, Qijun and Xu, Ceyu and Wills, Lisa Wu and Zhang, Hongce and Xie, Zhiyao},
-  booktitle={Proceedings of 2023 IEEE/ACM International Conference on Computer-Aided Design (ICCAD)},
-  pages={1--9},
-  year={2023},
-  organization={IEEE}
-}
-```
+## Update!
+Thanks for your interest in our RTL-stage PPA modeling work. We have enhanced this work to achieve more fine-grained register slack evaluation and more accurate WNS and TNS prediction at the RTL stage, with much easier pre-processing for RTL designs. For more details, please refer to [RTL-Timer (DAC'24)](https://github.com/hkust-zhiyao/RTL-Timer).
 
 ## Abstract
 
@@ -138,6 +127,20 @@ All the RTL designs used in our work are collected from open-source projects, th
    ## Area:
    $ cd ML_model/area/model
    $ python3 mix_regression_kf.py
+```
+
+## Citation
+If MasterRTL could help your project, please cite our work:
+
+```
+@inproceedings{fang2023masterrtl,
+  title={MasterRTL: A Pre-Synthesis PPA Estimation Framework for Any RTL Design},
+  author={Fang, Wenji and Lu, Yao and Liu, Shang and Zhang, Qijun and Xu, Ceyu and Wills, Lisa Wu and Zhang, Hongce and Xie, Zhiyao},
+  booktitle={Proceedings of 2023 IEEE/ACM International Conference on Computer-Aided Design (ICCAD)},
+  pages={1--9},
+  year={2023},
+  organization={IEEE}
+}
 ```
 
 * Customize different machine learning models for timing, power, and area, respectively
