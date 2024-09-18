@@ -3,7 +3,6 @@ import re, json
 from multiprocessing import Pool
 from collections import defaultdict
 import networkx as nx
-import matplotlib.pyplot as plt
 import numpy as np
 from graph_stat import cal_timing_type
 
@@ -125,7 +124,7 @@ class ProcessGraph:
         pred_slack_lst = list(pred_slack_lst)
         # print(len(pred_slack_lst))
 
-        with open(f'/data/wenjifang/qor_predictor/ML_model/timing/data/pred_slack_lst/{design_name}_rf.json', 'w') as f:
+        with open(f'./pred_slack_lst/{design_name}_rf.json', 'w') as f:
             json.dump(pred_slack_lst, f)
  
         L_PATH_NUM = 100

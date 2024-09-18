@@ -126,6 +126,6 @@ def cal_timing(delay_list_all):
         wns = np.min(slack_array_total)
 
         feat_vec = [wns, tns]
-        print('tns:', tns)
-        print('wns:', wns)
+        print('calculated tns:', tns)
+        print('calculated wns:', wns)
         return feat_vec

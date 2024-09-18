@@ -1,7 +1,6 @@
 from logicGraph import *
 import pickle, json, time, os, sys
 from DG import Node
-from tqdm import trange
 import time, copy
 import concurrent.futures
 

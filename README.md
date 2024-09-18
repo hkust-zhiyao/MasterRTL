@@ -3,7 +3,7 @@
 Wenji Fang, Yao Lu, Shang Liu, Qijun Zhang, Ceyu Xu, Lisa Wu Wills, Hongce Zhang, Zhiyao Xie. In Proceedings of IEEE/ACM International Conference on Computer Aided Design (ICCAD), 2023. [[paper]](https://ieeexplore.ieee.org/abstract/document/10323951)
 
 ## Update!
-Thanks for your interest in our RTL-stage PPA modeling work. We have enhanced this work to achieve more fine-grained register slack evaluation and more accurate WNS and TNS prediction at the RTL stage, with much easier pre-processing for RTL designs. For more details, please refer to [RTL-Timer (DAC'24)](https://github.com/hkust-zhiyao/RTL-Timer).
+Thanks for your interest in our RTL-stage PPA modeling work. We have improved this work to achieve more fine-grained register slack evaluation and more accurate WNS and TNS prediction at the RTL stage, with much easier pre-processing for RTL designs. For more details, please refer to [RTL-Timer (DAC'24)](https://github.com/hkust-zhiyao/RTL-Timer).
 
 ## Abstract
 
@@ -75,7 +75,7 @@ All the RTL designs used in our work are collected from open-source projects, th
 ```
    ## Timing
    $ cd preproc/timing
-   $ python3 delay_propagate.py
+   $ python3 delay_propagation.py
    
    ## Power
    $ cd preproc/power
@@ -83,7 +83,7 @@ All the RTL designs used in our work are collected from open-source projects, th
 ```
 
 * Preprocess the circuit graph data, including:
-  * Process the graph into a directed acyclic graph (DAG) by removing the loop of the registers ("timing/delay_propagate.py").
+  * Process the graph into a directed acyclic graph (DAG) by removing the loop of the registers ("timing/delay_propagation.py").
   * Conduct delay propagation for timing estimation ("timing/delay_propagate.py").
   * Perform toggle rate propagation for power prediction ("power/tr_propagate.py"). Note that the toggle rate propagation is performed at the module level and the original Verilog is partitioned using Yosys. The initial toggle rate is obtained from Design Compiler at the beginning of the synthesis process, the variable names from Yosys and DC are slightly different and need alignment.
 
@@ -107,12 +107,12 @@ All the RTL designs used in our work are collected from open-source projects, th
    $ python3 feature_extra_graph_stat.py
 ```
 
-* Perform feature extractions for timing, power, and area
+* Perform feature extractions for timing, power, and area, the example of extracted features are saved in "./example/feature"
   * Timing: analytical node delay feature, propagated path delay feature, graph-level feature, etc.
   * Power: propagated toggle rate feature, module-level power feature, graph-level feature, etc.
   * Area: analytical area feature, graph-level feature, etc.
 
-### 5. ML models (folder: "ML_model")
+### 5. ML model Training (folder: "ML_model")
 
 ```
    ## Timing
@@ -127,6 +127,23 @@ All the RTL designs used in our work are collected from open-source projects, th
    ## Area:
    $ cd ML_model/area/model
    $ python3 mix_regression_kf.py
+```
+
+### 6. ML model inference (folder: "ML_model/infer")
+
+```
+   ## Timing (WNS)
+   $ cd ML_model/infer
+   $ python3 infer_wns.py
+
+   ## Timing (TNS)
+   $ cd ML_model/infer
+   $ python3 infer_tns.py
+
+   ## Area
+   $ cd ML_model/infer
+   $ python3 infer_area.py
+
 ```
 
 ## Citation

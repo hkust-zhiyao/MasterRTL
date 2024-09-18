@@ -22,7 +22,9 @@ def run_one_design(design_name, cmd, out_path):
         start_time = time.perf_counter()
 
         ### ---- load the path-level model 'rfr' ---- ###
-        rfr = None
+        # with open('/home/coguest5/MasterRTL/ML_model/saved_model/rfr_model.pkl', 'rb') as f:
+        #         rfr = pickle.load(f)
+        rfr = train_rfr()
         ######################################################################
 
         delay_list_all, wns_list = graphProc.Graph_STA(rfr, design_name)
@@ -32,6 +34,9 @@ def run_one_design(design_name, cmd, out_path):
         feat_timing = cal_timing(delay_list_all)
         wns_pred = feat_timing[0]
         tns_pred = feat_timing[1]
+
+        with open(f'{out_path}/{design_name}_{cmd}_vec_timing.json', 'w') as f:
+                json.dump(feat_timing, f)
 
 
         

@@ -5,11 +5,9 @@ import numpy as np
 import xgboost as xgb
 from sklearn.ensemble import RandomForestRegressor
 def load_data():
-    dc_label_data = f'/data/user/AST_analyzer/ML_model/timing_data/label/label_all/label_lst.pkl'
-    feat_data = f'/data/user/AST_analyzer/ML_model/timing_data/feature/feat_all/feat_lst.pkl'
 
-    dc_label_data = f'/data/user/AST_analyzer/ML_model/timing_data/label_all/label_all/label_lst.pkl'
-    feat_data = f'/data/user/AST_analyzer/ML_model/timing_data/feature/feat_all/feat_all_lst.pkl'
+    feat_data = f'/home/coguest5/MasterRTL/ML_model/saved_data/feat_all_lst.pkl'
+    dc_label_data= f'/home/coguest5/MasterRTL/ML_model/saved_data/label_lst.pkl'
 
     # sample_lst = []
     # for idx in range(3000):
