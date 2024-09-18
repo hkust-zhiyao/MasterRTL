@@ -160,7 +160,3 @@ If MasterRTL could help your project, please cite our work:
 }
 ```
 
-* Customize different machine learning models for timing, power, and area, respectively
-  * Timing: path-level model training and inference, and design-level calibration model
-  * Power: module-level power model and design-level calibration model
-  * Area: design-level area prediction model
