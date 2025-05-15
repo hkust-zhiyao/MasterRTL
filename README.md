@@ -112,38 +112,19 @@ All the RTL designs used in our work are collected from open-source projects, th
   * Power: propagated toggle rate feature, module-level power feature, graph-level feature, etc.
   * Area: analytical area feature, graph-level feature, etc.
 
-### 5. ML model Training (folder: "ML_model")
+### 5. ML model Training (folder: "ML_model/train")
 
 ```
-   ## Timing
-   $ cd ML_model/timing/model
-   $ python3 xgbooster_regression_kf_tns.py
-   $ python3 xgbooster_regression_kf_wns.py
-   
-   ## Power
-   $ cd ML_model/power/model
-   $ python3 mix_regression_kf.py
-   
-   ## Area:
-   $ cd ML_model/area/model
-   $ python3 mix_regression_kf.py
+   ## Change the ppa_tpe in "train.py" (Area/TNS/WNS/Power)
+   $ python3 train.py
 ```
+* Trained model is saved in "ML_model/saved_model"
 
 ### 6. ML model inference (folder: "ML_model/infer")
 
 ```
-   ## Timing (WNS)
-   $ cd ML_model/infer
-   $ python3 infer_wns.py
-
-   ## Timing (TNS)
-   $ cd ML_model/infer
-   $ python3 infer_tns.py
-
-   ## Area
-   $ cd ML_model/infer
-   $ python3 infer_area.py
-
+   ## Change the ppa_tpe in "infer.py" (Area/TNS/WNS/Power)
+   $ python3 infer.py
 ```
 
 ## Citation

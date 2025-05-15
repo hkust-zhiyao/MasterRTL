@@ -5,21 +5,21 @@ import copy, time, os, json
 from sklearn.metrics import accuracy_score, mean_squared_error
 from xgboost import XGBClassifier
 import numpy as np
-
 import pickle
+from preprocess import load_data_test
 
 def load_data_sep():
 
     design_name = 'TinyRocket'
     feat_dir = f'../../example/feature/'
 
-    with open(f'{feat_dir}{design_name}_sog_vec_timing.json', 'r') as f:
-        feat_timing_lst = json.load(f)
+    # with open(f'{feat_dir}{design_name}_sog_vec_timing.json', 'r') as f:
+    #     feat_timing_lst = json.load(f)
     with open(f'{feat_dir}{design_name}_sog_vec_area.json', 'r') as f:
         feat_design_lst = json.load(f)
     test_feat_lst = []
     test_feat_lst.extend(feat_design_lst)
-    test_feat_lst.extend(feat_timing_lst)
+    # test_feat_lst.extend(feat_timing_lst)
     test_label_lst = []
 
 
@@ -45,21 +45,18 @@ def calculate_r_mape_rrse(actual, predicted):
 
 
 if __name__ == '__main__':
+    ppa_tpe = "Area"
+    ppa_tpe = "TNS"
+    ppa_tpe = "WNS"
+    ppa_tpe = "Power"
+    model_name = f'../saved_model/xgboost_{ppa_tpe}_model.pkl'
+    with open(model_name, 'rb') as f:
+        model = pickle.load(f)    
 
-    test_eval = 'tns'
-    model_name = f'../saved_model/xgboost_{test_eval}_model.json'
-    
-    model = xgb.XGBRegressor()
-    model.load_model(model_name)
-    x_test, y_test = load_data_sep()
-    # if test_eval == 'wns':
-    #     y_true = y_test[:, 0]
-    # else:
-    #     y_true = y_test[:, 1]
+    x_test, y_test = load_data_test(ppa_tpe)
     y_pred = model.predict(x_test)
-    print(f"Predicted {test_eval}:", y_pred)
-    # metric = calculate_r_mape_rrse(y_true, y_pred)
-    # print(metric)
+    print(f"Predicted {ppa_tpe}:", y_pred)
+
 
 
 
